@@ -1,0 +1,20 @@
+/**
+• GLOBAL_NODE.SVTD
+• Hardware Mapping & Deployment Target
+*/
+[TARGET_SPECS]
+hardware_id = PHS_NODE_GEN_1
+mcu_target = ["ESP32-S3", "RISC-V", "ARM64"]
+bus_protocol = "RHIZOME_V1"
+[RESOURCE_ALLOCATION]
+psram_usage = 512KB
+radio_frequency = [433MHz, 868MHz, 2.4GHz]
+io_mapping = {
+"status_led": "GPIO_2",
+"zero_force_btn": "GPIO_0",
+"tamper_sensor": "GPIO_4"
+}
+[FLASH_INSTRUCTIONS]
+addr_offset = 0x10000
+encryption_at_rest = TRUE
+shadow_opcode_mapping = SVIT_MAP_V1.5
